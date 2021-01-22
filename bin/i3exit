@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# /usr/bin/i3exit
+
+case "$1" in
+    lock)
+        slock
+	;;
+    logout)
+        i3-msg exit
+        ;;
+    #suspend)
+    #    systemctl suspend
+    #    ;;
+    #hibernate)
+    #    systemctl hibernate
+    #    ;;
+    reboot)
+        sv restart 
+	;;
+    shutdown)
+        sv shutdown 
+	;;
+    *)
+        echo "Usage: $0 [lock|logout|reboot|shutdown]"
+        exit 2
+esac
+
+exit 0

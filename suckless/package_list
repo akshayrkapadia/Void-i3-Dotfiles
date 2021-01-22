@@ -1,0 +1,8 @@
+pkg-config
+imlib2-devel
+libXrandr-devel
+libXft-devel
+libXinerama-devel
+libX11-devel
+gcc
+make

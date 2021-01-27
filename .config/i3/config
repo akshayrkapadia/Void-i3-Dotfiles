@@ -60,6 +60,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run -p "Run"
 
 # Pulse Audio controls
 exec --no-startup-id pulseaudio --start
+bindsym Ctrl+Shift+XF86AudioMute exec --no-startup-id exec pulseadio --kill && pulseaudio --start
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
@@ -69,7 +70,6 @@ bindsym Ctrl+F6 exec pavucontrol
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
-
 # Media player controls
 bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioNext exec mpc next
@@ -78,34 +78,26 @@ bindsym XF86AudioPrev exec mpc prev
 # display controls
 bindsym Ctrl+F4 exec ./.local/bin/displayselect
 
-# wifi setup
-# exec --no-startup-id ./.local/bin/wpa_wifi
-
-# vpn setup
-# bindsym Mod1+F12 exec ./.local/bin/vpnconnect
-# bindsym Mod1+Shift+F12 exec sudo protonvpn d && notify-send "VPN" "Disconnected" -u critical
-
 # mount/unmount drives
-bindsym Mod1+F7 exec ./.local/bin/mountdrive
-bindsym Mod1+Shift+F7 exec ./.local/bin/unmountdrive
+bindsym Ctrl+F10 exec ./.local/bin/mount_dmenu
+bindsym Ctrl+Shift+F10 exec ./.local/bin/unmount_dmenu
 
 # edit configs
 bindsym $mod+Shift+e exec ./.local/bin/editconfig
 
 # applications
 bindsym $mod+F2 exec ./.local/bin/websearch
-bindsym $mod+Shift+F2 exec icecat 
+bindsym $mod+Shift+F2 exec chromium 
 bindsym $mod+F3 exec i3-sensible-terminal -e ranger
+bindsym $mod+Shift+F3 exec i3-sensible-terminal -e sudo ranger ~/
 bindsym $mod+F4 exec i3-sensible-terminal -e vim
-bindsym $mod+F5 exec i3-sensible-terminal -e ncmpcpp
 
 # Kill window
 bindsym Mod1+Ctrl+Delete --release exec xkill
 
 # autostart
-exec --no-startup-id exec blueman-applet
-#exec --no-startup-id exec dunst
-#exec --no-startup-id exec ./.local/bin/vpnconnect
+# exec --no-startup-id exec blueman-applet
+exec --no-startup-id exec dunst
 
 # scrot
 bindsym Print exec ./.local/bin/screenshot
@@ -265,7 +257,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        i3bar_command i3bar
+    i3bar_command i3bar
 	status_command i3status
 	position top
 

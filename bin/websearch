@@ -1,14 +1,13 @@
 #!/bin/zsh
 
-#QUERY=$(cat ~/.config/chromium/Default/Bookmarks | grep "http[s]*://*" | awk '{$1=""};1' | sed s/\"//g | sed s/" "//g | dmenu -p "Search")
-QUERY=$(echo "https://youtube.com\nhttps://suckless.org" | dmenu -p "Search")
+QUERY=$(cat ~/.config/chromium/Default/Bookmarks | grep "http[s]*://*" | awk '{$1=""};1' | sed s/\"//g | sed s/" "//g | dmenu -p "Search")
 if [ "$QUERY" != "" ]
 then
 	if [ "$(echo "$QUERY" | grep 'http[s]*://*.*')" != "" ]
 	then
-		icecat "$QUERY"
+		chromium "$QUERY"
 	else
 		QUERY=$(sed s/" "/"+"/g <<< "$QUERY")
-		icecat "https://duckduckgo.com/?q=$QUERY"
+		chromium "https://duckduckgo.com/?q=$QUERY"
 	fi
 fi

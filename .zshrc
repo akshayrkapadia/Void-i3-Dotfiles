@@ -93,9 +93,11 @@ export EDITOR='vim'
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
-#Colorize Conifg
+# Colorize Conifg
 ZSH_COLORIZE_TOOL=chroma
 
+# Default fzf command
+export FZF_DEFAULT_COMMAND="ag -g '' -l --hidden -i"
 
 # ALIASES
 # XBPS
@@ -109,6 +111,9 @@ alias xm="xu && xc"
 # Terminal
 alias cat="ccat"
 alias less="cless"
+
+# Git
+alias gitpush="gaa && gc -m 'Updated' && gp"
 
 export PATH=$PATH:~/.local/bin
 

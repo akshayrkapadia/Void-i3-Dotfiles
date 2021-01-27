@@ -79,7 +79,6 @@ plugins=(
     copyfile
     colorize
     wd
-
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -108,7 +107,6 @@ alias xc="sudo xbps-remove -Oo"
 alias xm="xu && xc"
 
 # Terminal
-alias rmr="yes | rm -R"
 alias cat="ccat"
 alias less="cless"
 

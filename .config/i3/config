@@ -71,26 +71,27 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 # Media player controls
-bindsym XF86AudioPlay exec mpc toggle
-bindsym XF86AudioNext exec mpc next
-bindsym XF86AudioPrev exec mpc prev
+# bindsym XF86AudioPlay exec mpc toggle
+# bindsym XF86AudioNext exec mpc next
+# bindsym XF86AudioPrev exec mpc prev
 
 # display controls
-bindsym Ctrl+F4 exec ./.local/bin/displayselect
+bindsym Ctrl+F4 exec ./.local/bin/display_select
 
 # mount/unmount drives
 bindsym Ctrl+F10 exec ./.local/bin/mount_dmenu
 bindsym Ctrl+Shift+F10 exec ./.local/bin/unmount_dmenu
 
 # edit configs
-bindsym $mod+Shift+e exec ./.local/bin/editconfig
+bindsym $mod+Shift+e exec ./.local/bin/edit_config
 
 # applications
-bindsym $mod+F2 exec ./.local/bin/websearch
+bindsym $mod+F2 exec ./.local/bin/web_search
 bindsym $mod+Shift+F2 exec chromium 
 bindsym $mod+F3 exec i3-sensible-terminal -e ranger
 bindsym $mod+Shift+F3 exec i3-sensible-terminal -e sudo ranger ~/
-bindsym $mod+F4 exec i3-sensible-terminal -e vim
+bindsym $mod+F4 exec i3-sensible-terminal -e  ./.local/bin/vim_cli
+bindsym $mod+F5 exec exec i3-sensible-terminal -e mocp
 
 # Kill window
 bindsym Mod1+Ctrl+Delete --release exec xkill

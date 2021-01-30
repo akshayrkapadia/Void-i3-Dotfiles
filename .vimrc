@@ -15,8 +15,14 @@ set autoindent
 set mouse=a
 set tabstop=4
 set cursorline
+set spelllang=en_us
+set nospell
 
-hi CursorLine term=bold cterm=bold ctermbg=black  guibg=Grey40
+" Colorscheme Settings
+colorscheme onedark
+let g:airline_theme='onedark'
+hi Normal ctermbg=None
+hi CursorLine guibg=#70798A
 
 " GitGutter Settings
 highlight! link SignColumn LineNr
@@ -33,3 +39,16 @@ let g:NERDCompactSexyComs = 1
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines = 1
+
+" AutoComplPop Settings
+set complete+=kspell
+set completeopt=menuone,longest
+set shortmess+=c
+
+" Polyglot Settings
+aug i3config_ft_detection
+    au!
+    au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+    au BufNewFile,BufRead ~/.config/i3status/config set filetype=i3config
+aug end
+

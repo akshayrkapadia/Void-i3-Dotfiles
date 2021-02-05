@@ -71,6 +71,8 @@ set shortmess+=c
 inoremap <expr> <Down> pumvisible() ? "<C-n>" :"<Down>"
 inoremap <expr> <Up> pumvisible() ? "<C-p>" : "<Up>"
 
+map <F4> :set spell!<CR>
+
 " Polyglot Settings
 aug i3config_ft_detection
     au!

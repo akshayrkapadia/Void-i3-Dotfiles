@@ -14,7 +14,7 @@ call plug#begin()
 
 Plug 'vim-scripts/AutoComplPop'
 Plug 'jiangmiao/auto-pairs'
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
 Plug 'joshdick/onedark.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
@@ -67,6 +67,9 @@ let g:NERDToggleCheckAllLines = 1
 set complete+=kspell
 set completeopt=menuone,longest
 set shortmess+=c
+
+inoremap <expr> <Down> pumvisible() ? "<C-n>" :"<Down>"
+inoremap <expr> <Up> pumvisible() ? "<C-p>" : "<Up>"
 
 " Polyglot Settings
 aug i3config_ft_detection

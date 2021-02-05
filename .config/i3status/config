@@ -57,9 +57,7 @@ wireless _first_ {
 }
 
 ethernet _first_ {
-        #format_up = " %speed ➜ %ip" 
-        #format_up = "%speed ➜ %ip"
-        format_up = " (%speed) %ip"
+        format_up = " Ethernet (%speed) ➜ %ip"
         format_down = ""
 }
 

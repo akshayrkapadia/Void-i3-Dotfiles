@@ -149,6 +149,9 @@ bindsym $mod+space focus mode_toggle
 # Force floating
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 
+# Focus on urgent window
+for_window [urgent="latest"] focus
+
 # focus the parent container
 bindsym $mod+a focus parent
 

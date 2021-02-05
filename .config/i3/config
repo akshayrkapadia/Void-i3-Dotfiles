@@ -82,15 +82,13 @@ bindsym Ctrl+F4 exec ./.local/bin/display_dmenu
 bindsym Ctrl+F10 exec ./.local/bin/mount_dmenu
 bindsym Ctrl+Shift+F10 exec ./.local/bin/unmount_dmenu
 
-# edit configs
-bindsym $mod+Shift+e exec ./.local/bin/edit_config
-
 # applications
 bindsym $mod+F2 exec ./.local/bin/web_search
 bindsym $mod+Shift+F2 exec chromium 
 bindsym $mod+F3 exec i3-sensible-terminal -e ranger
 bindsym $mod+Shift+F3 exec i3-sensible-terminal -e sudo ranger ~/
 bindsym $mod+F4 exec i3-sensible-terminal -e  ./.local/bin/vim_cli
+bindsym $mod+Shift+F4 exec i3-sensible-terminal -e ./.local/bin/edit_config_cli
 bindsym $mod+F5 exec exec i3-sensible-terminal -e mocp
 bindsym $mod+Shift+F5 exec exec audacity
 

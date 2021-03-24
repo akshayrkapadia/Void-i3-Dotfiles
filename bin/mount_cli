@@ -10,6 +10,7 @@ if [[ (-d /home/akshay/mnt) && (-d /home/akshay/mnt/dev) ]];then
                 NUM_DRIVES=$(lsblk -rpo "name" | grep "/dev/" | grep -v "sda\|sr0" | grep "[0-9]" | grep -v "$MOUNTED" | grep -c $)
                 if [[ $NUM_DRIVES == 0 ]]; then
                         echo -e "${RED}No drives available"
+                        exit
                 else
                          DRIVE=$(lsblk -rpo "name" | grep "/dev/" | grep -v "sda\|sr0" | grep "[0-9]" | grep -v "$MOUNTED" | fzf)
                 fi
@@ -17,6 +18,7 @@ if [[ (-d /home/akshay/mnt) && (-d /home/akshay/mnt/dev) ]];then
                 NUM_DRIVES=$(lsblk -rpo "name" | grep "/dev/" | grep -v "sda\|sr0" | grep "[0-9]" | grep -c $)
                 if [[ $NUM_DRIVES == 0 ]]; then
                         echo -e "${RED}No drives available"
+                        exit
                 else
                         DRIVE=$(lsblk -rpo "name" | grep "/dev/" | grep -v "sda\|sr0" | grep "[0-9]" | fzf)
                 fi

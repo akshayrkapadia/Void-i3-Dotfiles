@@ -7,6 +7,7 @@ if [[ (-d /home/akshay/mnt) && (-d /home/akshay/mnt/dev) ]];then
                 NUM_DRIVES=$(lsblk -rpo "name" | grep "/dev/" | grep -v "sda\|sr0" | grep "[0-9]" | grep -v "$MOUNTED" | grep -c $)
                 if [[ $NUM_DRIVES == 0 ]]; then
                         notify-send "Drive Failure" "No drives available" -u "critical"
+                        exit
                 else
                          DRIVE=$(lsblk -rpo "name" | grep "/dev/" | grep -v "sda\|sr0" | grep "[0-9]" | grep -v "$MOUNTED" | dmenu -p "Drive")
                 fi
@@ -14,6 +15,7 @@ if [[ (-d /home/akshay/mnt) && (-d /home/akshay/mnt/dev) ]];then
                 NUM_DRIVES=$(lsblk -rpo "name" | grep "/dev/" | grep -v "sda\|sr0" | grep "[0-9]" | grep -c $)
                 if [[ $NUM_DRIVES == 0 ]]; then
                         notify-send "Drive Failure" "No drives available" -u "critical"
+                        exit
                 else
                         DRIVE=$(lsblk -rpo "name" | grep "/dev/" | grep -v "sda\|sr0" | grep "[0-9]" | dmenu -p "Drive")
                 fi

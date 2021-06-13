@@ -104,7 +104,7 @@ export FZF_DEFAULT_COMMAND="ag -g '' -l --hidden -i"
 alias xi="sudo xbps-install -S"
 alias xr="sudo xbps-remove -R"
 alias xu="sudo xbps-install -Su"
-alias xs="sudo xbps-query -Rs"
+alias xs="xbps-query -Rs"
 alias xc="sudo xbps-remove -Oo"
 alias xm="xu && xc"
 
@@ -114,6 +114,9 @@ alias less="cless"
 
 # Git
 alias gitpush="gaa && gc -m 'Updated' && gp"
+
+# Pulseaudio
+alias pulseaudio_fix="pulseaudio --kill && pulseaudio --start"
 
 export PATH=$PATH:~/.local/bin
 
